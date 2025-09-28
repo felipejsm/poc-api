@@ -2,6 +2,7 @@ package com.pocapi.poc.service;
 
 import com.pocapi.poc.client.UserClient;
 import com.pocapi.poc.model.User;
+import com.pocapi.poc.model.UserMetadata;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public class UserClientService {
         this.userClient = userClient;
     }
 
-    public List<User> getUsers() {
+    public UserMetadata getUsers() {
         return this.userClient.getUsers();
     }
 }
