@@ -5,7 +5,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pocapi.poc.client.UserClient;
 import com.pocapi.poc.model.UserMetadata;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -16,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class UserClientServiceTest {
+class UserClientServiceTest {
 
     @InjectMocks
     UserClientService userClientService;
@@ -42,10 +41,6 @@ public class UserClientServiceTest {
             """;
     ObjectMapper objectMapper;
 
-    @BeforeEach
-    void init() {
-        userClientService = new UserClientService(userClient);
-    }
     @Test
     void getUsers() throws JsonProcessingException {
         objectMapper = new ObjectMapper();
