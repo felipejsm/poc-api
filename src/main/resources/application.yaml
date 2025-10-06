@@ -9,6 +9,13 @@ spring:
                         connectTimeout: 5000
                         readTimeout: 5000
                         loggerLevel: basic
+        azure:
+          servicebus:
+            namespace: sbemulatorns
+            entity-type: queue
+            connection-string: Endpoint=sb://servicebus-emulator;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;
+          credential:
+            managed-identity-enabled: false
     datasource:
       url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1
       username: sa
